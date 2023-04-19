@@ -6,22 +6,6 @@ displayBeer()
 function displayBeer() {
     // Die URL der API, die die Biere liefert
     const url = `https://api.punkapi.com/v2/beers`;
-
-    // Abrufen der Daten von der API mit fetch
-        // ToDo
-       
-
-    // Speichern der vollständigen Liste der Biere in das vorgegebene Array
-        // ToDo
-
-    // Generieren des HTML-Codes für jedes Bier und Zusammenfügen in eine einzige Zeichenkette => Hilfestellung: data.map(generateBeerHtml).join('')
-        // ToDo
-
-        
-
-    // Fügen des HTML-Codes zur beerContainer-Div-Box hinzu
-        // ToDo
-    
           
     // Abrufen der Daten von der API mit fetch
     fetch(url)
@@ -113,15 +97,13 @@ function getBeerDetails(beerID) {
                                     <div class="px-2">
                                         <p><b>ingredients: malt</b></p>
                                         <ul>
-                                        <!-- ToDo: malt name => Hinweis map! Ausgabe in <li> nicht vergessen -->
                                         ${beer.ingredients.malt.map(malt => `<li>${malt.name} </li>`).join('')}
                                         </ul>
                                     </div>
                                     <div class="px-2">
                                         <p><b>ingredients: hops</b></p>
                                         <ul>
-                                           <!-- ToDo: hops name => Hinweis map! Ausgabe in <li> nicht vergessen -->
-                                           ${beer.ingredients.hops.map(hop => `<li>${hop.name}</li>`).join('')}
+                                           ${beer.ingredients.hops.map(hops => `<li>${hops.name}</li>`).join('')}
                                         </ul>
                                     </div>
                                 </div>
@@ -160,19 +142,16 @@ function getBeerDetails(beerID) {
                                 </table>
                                 <p><b>Food Pairing</b></p>
                                 <ul>
-                                    <!--ToDo: food pairing => Hinweis map! Ausgabe in <li> nicht vergessen-->
                                     ${beer.food_pairing.map(food => `<li>${food}</li>`).join('')}
-
                                 </ul>
                             </div>
                         </div>
                         <p>
-                        <!--ToDo: brewers tip-->
                         ${beer.brewers_tips}
                         </p>
                     </div>
                     <div class="modal-footer">
-                        <p><small><!--ToDo: contributed by--></small></p>
+                        <p><small>${beer.contributed_by}</small></p>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
